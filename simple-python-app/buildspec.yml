@@ -19,10 +19,10 @@ phases:
       - echo "Running tests..."
       - cd simple-python-app/
       - echo "Building Docker image..."
-      - echo "$DOCKER_REGISTRY_URL" 
-      - docker login --username "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_PASSWORD"
-      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/sample-python-flask:latest" .
-      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/sample-python-flask:latest"
+      - echo $DOCKER_REGISTRY_URL 
+      - docker login --username $DOCKER_REGISTRY_USERNAME --password-stdin $DOCKER_REGISTRY_PASSWORD
+      - docker build -t $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/sample-python-flask:latest .
+      - docker push $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/sample-python-flask:latest
   post_build:
     commands:
       - echo "Build completed successfully!"
